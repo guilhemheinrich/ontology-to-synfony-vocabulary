@@ -8,7 +8,8 @@ import { walker_recursive_sync } from '../Helper/walker'
 import camelize from '../Helper/camelize'
 import array_unifier from '../Helper/array_unifier'
 import { Owl_Parser } from './processRdf'
-import { Optional_Class_Mapping_constructorI, Erasable_Property_Mapping_constructor, Property_Mapping_constructor, Class_Mapping_constructorI } from '../Type/Mapping'
+// import { Optional_Class_Mapping_constructorI, Erasable_Property_Mapping_constructor, Property_Mapping_constructor, Class_Mapping_constructorI } from '../Type/Mapping'
+import {Resources_MappingI, Class_MappingI, Property_MappingI} from '../Type/Mappings_new'
 import * as stream from 'stream/promises'
 import { NamedNode } from 'n3'
 dotenv.config()
@@ -140,13 +141,14 @@ export default class OWL_Mapper {
 
     }
 
-    writeMappings(output_path: string) {
-        const mappings = this.mapping_templater()
+    writeMappings(output_path: string, entity_mappings?: {[key: string]: string}) {
+        const mappings = this.mapping_templater(entity_mappings)
         const prefixes = this.prefixes_templater()
 
-        fs.writeFileSync(output_path, yaml.dump({ Prefixes: prefixes, Specific: mappings }), { encoding: "utf-8" })
+        fs.writeFileSync(output_path, yaml.dump({ Resources: mappings }), { encoding: "utf-8" })
     }
 
+    // TODO Gérer le cas ou l'on a une notation préfixé ns:classname => renvoyé classname
     shortener(uri: string) {
         // Extremely permissive url SchemaMetaFieldDef, but lead to error: (^[^#]*[\/#])([^/#]*)$
         const uri_separator = new RegExp(/(^.*[\/#])([\d\w]*)$/gm)
@@ -174,21 +176,27 @@ export default class OWL_Mapper {
         return shorten_pass
     }
 
-    mapping_templater() {
-        const mappings: Optional_Class_Mapping_constructorI[] = []
+    mapping_templater(entity_mappings?: {[entity_key: string]: string}) {
+        const mappings: Resources_MappingI = {}
         // Iterate over all concept
         let concepts = Object.values(this.RDF_handler.gql_resources_preprocesing).filter(resource => resource.isConcept && !resource.isAbstract)
 
         for (let concept of concepts) {
-            let entry: Class_Mapping_constructorI = {
-                key: this.shortener(concept.class_uri),
-                data_properties: [],
-                object_properties: []
+            let entity_qualified_path = this.shortener(concept.class_uri)
+            if (entity_mappings) {
+                if (entity_mappings[entity_qualified_path]) entity_qualified_path = entity_mappings[entity_qualified_path]
+            }
+
+            // Comment peut on aligner une class sur une resource précise / comment modifier le @type
+            let class_entry: Class_MappingI = {
+                '@type': concept.class_uri,
+                properties: {}
             };
-            (<Erasable_Property_Mapping_constructor[]>entry.object_properties).push(<Erasable_Property_Mapping_constructor>{
-                value: concept.class_uri,
-                rdf_property: 'rdf:Class'
-            })
+            // ! La class devrait être gérer avec @type
+            // (<Erasable_Property_Mapping_constructor[]>entry.object_properties).push(<Erasable_Property_Mapping_constructor>{
+            //     value: concept.class_uri,
+            //     rdf_property: 'rdf:Class'
+            // })
             const restrictions = this.RDF_handler.getRestrictions(concept.class_uri)
             // Iterate over properties
             const all_properties = this.RDF_handler.getInheritedValues(concept.class_uri, "properties")
@@ -213,26 +221,28 @@ export default class OWL_Mapper {
                     // console.log('Found restriction on property ' + property.name + ' on class ' + concept.name)
                     // console.log(property)
                 }
+                // TODO Right now we are doig the same, but we could/sould handle xml:Types when possible
+                
+                const key = this.shortener_property(property.class_uri) + (property.isList ? 's' : '');
+                const property_entry: Property_MappingI = {
+                    attributes: {
+                        jsonld_context: {
+                            '@id': property.class_uri,
+                            '@type': property.type
+                        }
+                    }
+                }; 
                 if (this.RDF_handler.isDatatypeProperty(property)) {
                     // console.log(property_uri + " is a datatype property" + (property.isList ? ' and a list' : ''));
 
-                    (<Erasable_Property_Mapping_constructor[]>entry.data_properties).push(<Erasable_Property_Mapping_constructor>{
-                        php_property: this.shortener_property(property.class_uri) + (property.isList ? 's' : ''),
-                        rdf_property: this.RDF_handler.prefixer(property.class_uri)
-                    })
                 } else {
-                    // console.log(property_uri + " is an object property" + (property.isList ? ' and a list' : ''));
-                    (<Erasable_Property_Mapping_constructor[]>entry.object_properties).push(<Erasable_Property_Mapping_constructor>{
-                        php_property: this.shortener_property(property.class_uri) + (property.isList ? 's' : ''),
-                        rdf_property: this.RDF_handler.prefixer(property.class_uri)
-                    })
+
                 }
+                class_entry.properties[key] = property_entry
 
             }
-            entry.object_properties = array_unifier(<Erasable_Property_Mapping_constructor[]>entry.object_properties)
-            entry.data_properties = array_unifier(<Erasable_Property_Mapping_constructor[]>entry.data_properties)
 
-            mappings.push(entry)
+            mappings[entity_qualified_path] = class_entry
         }
         return mappings
     }
