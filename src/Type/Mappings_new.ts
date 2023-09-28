@@ -3,7 +3,7 @@ export interface Resources_MappingI {
 }
 
 export interface Class_MappingI {
-    '@type': string
+    'iri': string
     properties: {[php_property: string]: Property_MappingI}
 }
 

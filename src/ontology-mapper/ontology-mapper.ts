@@ -56,7 +56,7 @@ export default class OWL_Mapper {
                 const contentType = this.guessContentType(filename)
                 const prefixStream = rdfParser.parse(fs.createReadStream(filename), { contentType: contentType })
                     .on('prefix', (prefix: string, iri: NamedNode) => {
-                        console.log('Read prefix ' + prefix)
+                        // console.log('Read prefix ' + prefix)
                         this.RDF_handler.prefix_handler.prefix_array.push({
                             uri: iri.id,
                             prefix: prefix
@@ -65,22 +65,24 @@ export default class OWL_Mapper {
                     .on('data', () => { })
                     .on('error', (error: any) => console.error(error))
                     .on('end', () => {
-                        console.log('finished reading prefixes from ' + filename)
+                        // console.log('finished reading prefixes from ' + filename)
                     });
                 prefixParse.push(stream.finished(prefixStream))
             }
 
             return Promise.all(prefixParse)
                 .then((values) => {
-                    console.log(this.RDF_handler.prefix_handler.prefix_array)
+                    // console.log(this.RDF_handler.prefix_handler.prefix_array)
                 })
-                .catch((err) => console.log(err))
+                .catch((err) => {
+                    console.error(err)
+                })
         } else {
             const filename = ontologies_path
             const contentType = this.guessContentType(filename)
             return rdfParser.parse(fs.createReadStream(filename), { contentType: contentType })
                 .on('prefix', (prefix: string, iri: NamedNode) => {
-                    console.log('Read prefix ' + prefix)
+                    // console.log('Read prefix ' + prefix)
                     this.RDF_handler.prefix_handler.prefix_array.push({
                         uri: iri.id,
                         prefix: prefix
@@ -89,7 +91,7 @@ export default class OWL_Mapper {
                 .on('data', () => { })
                 .on('error', (error: any) => console.error(error))
                 .on('end', () => {
-                    console.log('finished reading prefixes from ' + filename)
+                    // console.log('finished reading prefixes from ' + filename)
                 });
         }
 
@@ -108,7 +110,7 @@ export default class OWL_Mapper {
                     })
                     .on('error', (error: any) => console.error(error))
                     .on('end', () => {
-                        console.log('finished reading quad from ' + filename)
+                        // console.log('finished reading quad from ' + filename)
 
                     });
                 allParse.push(stream.finished(parseStream))
@@ -127,7 +129,7 @@ export default class OWL_Mapper {
                 })
                 .on('error', (error: any) => console.error(error))
                 .on('end', () => {
-                    console.log('finished reading quad from ' + filename)
+                    // console.log('finished reading quad from ' + filename)
 
                 });
             allParse.push(stream.finished(parseStream))
@@ -142,10 +144,14 @@ export default class OWL_Mapper {
     }
 
     writeMappings(output_path: string, entity_mappings?: {[key: string]: string}) {
-        const mappings = this.mapping_templater(entity_mappings)
+        const {mappings, unmatched_concepts, unmatched_entities} = this.mapping_templater(entity_mappings)
         const prefixes = this.prefixes_templater()
 
-        fs.writeFileSync(output_path, yaml.dump({ Resources: mappings }), { encoding: "utf-8" })
+        fs.writeFileSync(output_path, yaml.dump({ resources: mappings }), { encoding: "utf-8" })
+        return {
+            unmatched_concepts,
+            unmatched_entities
+        }
     }
 
     // TODO Gérer le cas ou l'on a une notation préfixé ns:classname => renvoyé classname
@@ -179,17 +185,26 @@ export default class OWL_Mapper {
     mapping_templater(entity_mappings?: {[entity_key: string]: string}) {
         const mappings: Resources_MappingI = {}
         // Iterate over all concept
-        let concepts = Object.values(this.RDF_handler.gql_resources_preprocesing).filter(resource => resource.isConcept && !resource.isAbstract)
-
+        const concepts = Object.values(this.RDF_handler.gql_resources_preprocesing).filter(resource => resource.isConcept && !resource.isAbstract)
+        // Log the unmatched concept during the mapping phase
+        const unmatched_concepts: string[] = []
+        
         for (let concept of concepts) {
             let entity_qualified_path = this.shortener(concept.class_uri)
             if (entity_mappings) {
-                if (entity_mappings[entity_qualified_path]) entity_qualified_path = entity_mappings[entity_qualified_path]
-            }
+                if (entity_mappings[entity_qualified_path]) {
+                    entity_qualified_path = entity_mappings[entity_qualified_path]
+                } else {
+                    //! We just drop the resource, as it incorrect resource provoke a bug in Synfony
+                    unmatched_concepts.push(concept.class_uri)
+                    // console.warn(`${entity_qualified_path} is not a recognized resource, therefore it will be dropped from the generation`)
+                    continue
+                }
+            } 
 
             // Comment peut on aligner une class sur une resource précise / comment modifier le @type
             let class_entry: Class_MappingI = {
-                '@type': concept.class_uri,
+                'iri': concept.class_uri,
                 properties: {}
             };
             // ! La class devrait être gérer avec @type
@@ -244,7 +259,18 @@ export default class OWL_Mapper {
 
             mappings[entity_qualified_path] = class_entry
         }
-        return mappings
+        // Grab the unmatched entities by set difference
+        const unmatched_entities: string[] = []
+        for (let key in entity_mappings) {
+            if (!(Object.keys(mappings)).includes(key)) {
+                unmatched_entities.push(key)
+            }
+        }
+        return {
+            mappings: mappings, 
+            unmatched_concepts: unmatched_concepts, 
+            unmatched_entities: unmatched_entities
+        }
     }
 
     prefixes_templater() {

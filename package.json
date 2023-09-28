@@ -19,14 +19,15 @@
   "homepage": "https://github.com/guilhemheinrich/ontology-to-synfony-vocabulary#readme",
   "devDependencies": {
     "@rdfjs/types": "^1.1.0",
+    "@types/commander": "^2.12.2",
     "@types/fs-extra": "^11.0.1",
-    "commander": "^10.0.1",
     "grunt": "^1.6.1",
     "grunt-contrib-copy": "^1.0.0",
     "nexe": "^4.0.0-rc.2",
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "commander": "^10.0.1",
     "@types/js-yaml": "^4.0.5",
     "@types/n3": "^1.10.4",
     "dotenv": "^16.0.3",

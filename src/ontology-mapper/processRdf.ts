@@ -163,7 +163,7 @@ export class Owl_Parser {
                 let found_prefix = this.prefix_handler.getPrefixAndUriFromUri(prefix)
                 return found_prefix?.prefix + '__' + _array[0][2]
             } else {
-                console.log(`${class_uri} is not found`)
+                // console.log(`${class_uri} is not found`)
                 return _array[0][2]
             }
         } else {
@@ -296,7 +296,7 @@ export class Owl_Parser {
                 this.gql_resources_preprocesing[subject].property_uri = object
                 break
             case "owl:someValuesFrom":
-                console.log(`${subject} ${predicate} ${object}`)
+                // console.log(`${subject} ${predicate} ${object}`)
                 break
             case "owl:minQualifiedCardinality":
             case "owl:minCardinality":
@@ -304,7 +304,7 @@ export class Owl_Parser {
                 if (cardinality >= 1) {
                     this.gql_resources_preprocesing[subject].isRequired = true
                 }
-                console.log(`${subject} ${predicate} ${object}`)
+                // console.log(`${subject} ${predicate} ${object}`)
                 break
             case "owl:maxQualifiedCardinality":
             case "owl:maxCardinality":
@@ -312,7 +312,7 @@ export class Owl_Parser {
                 if (cardinality <= 1) {
                     this.gql_resources_preprocesing[subject].isList = false
                 }
-                console.log(`${subject} ${predicate} ${object}`)
+                // console.log(`${subject} ${predicate} ${object}`)
                 break
             case "owl:qualifiedCardinality":
             case "owl:cardinality":
@@ -321,13 +321,13 @@ export class Owl_Parser {
                 if (cardinality == 1) {
                     this.gql_resources_preprocesing[subject].isList = false
                 }
-                console.log(`${subject} ${predicate} ${object}`)
+                // console.log(`${subject} ${predicate} ${object}`)
                 break
             case "owl:onDataRange":
-                console.log(`${subject} ${predicate} ${object}`)
+                // console.log(`${subject} ${predicate} ${object}`)
                 break
             case "owl:onClass":
-                console.log(`${subject} ${predicate} ${object}`)
+                // console.log(`${subject} ${predicate} ${object}`)
                 break
             default:
 
