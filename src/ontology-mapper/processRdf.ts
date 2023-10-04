@@ -22,7 +22,7 @@ export interface Gql_Resource {
     property_uri?: string
 
 }
-export interface _Porperty_Template {
+export interface _Property_Template {
     type: "Object" | "Litteral"
     name: string
     valuetype: string
@@ -30,11 +30,11 @@ export interface _Porperty_Template {
     // isList: boolean
 }
 
-export interface ObjectProperty_Template extends _Porperty_Template {
+export interface ObjectProperty_Template extends _Property_Template {
     type: "Object"
 }
 
-export interface DatatypeProperty_Template extends _Porperty_Template {
+export interface DatatypeProperty_Template extends _Property_Template {
     type: "Litteral"
     name: string
     valuetype: "String" | "Int" | "Float" | "Boolean" | "Null" | "ID" | "Date" | "DateTime"
@@ -266,11 +266,34 @@ export class Owl_Parser {
                 break
             case "rdfs:label":
                 // TODO Handle __type of the class, or something else...
+                // TODO Also, what to do when there is multiple labels ?
                 this.gql_resources_preprocesing[subject].name = object
                 break
             case "rdfs:comment":
                 break
             case "rdfs:range":
+                // TODO Handle case of complex object, such as
+                // <rdfs:Datatype>
+                //     <owl:oneOf>
+                //         <rdf:Description>
+                //             <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                //             <rdf:first>Bacth</rdf:first>
+                //             <rdf:rest>
+                //                 <rdf:Description>
+                //                     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                //                     <rdf:first>Continuous</rdf:first>
+                //                     <rdf:rest>
+                //                         <rdf:Description>
+                //                             <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                //                             <rdf:first>Semi-continous</rdf:first>
+                //                             <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                //                         </rdf:Description>
+                //                     </rdf:rest>
+                //                 </rdf:Description>
+                //             </rdf:rest>
+                //         </rdf:Description>
+                //     </owl:oneOf>
+                // </rdfs:Datatype>
                 this.gql_resources_preprocesing[subject].type = object
                 break
             case "rdfs:domain":
