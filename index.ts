@@ -42,12 +42,3 @@ cli
     })
 cli.parse(process.argv)
 
-
-
-
-
-
-
-
-
-// module.execute("D:/code/DEEPOMICS/deepomics-ontology/ontologies/deepomics-core.owl", "./out/generated_bis.yaml", "./entity_mappings.txt")
