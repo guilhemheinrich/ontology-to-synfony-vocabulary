@@ -262,8 +262,8 @@ export default class OWL_Mapper {
         // Grab the unmatched entities by set difference
         const unmatched_entities: string[] = []
         for (let key in entity_mappings) {
-            if (!(Object.keys(mappings)).includes(key)) {
-                unmatched_entities.push(key)
+            if (!(Object.keys(mappings)).includes(entity_mappings[key])) {
+                unmatched_entities.push(entity_mappings[key])
             }
         }
         return {

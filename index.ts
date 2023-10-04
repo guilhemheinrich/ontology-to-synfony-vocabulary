@@ -13,10 +13,10 @@ const main = {
         fs.ensureDirSync(path.dirname(generated_mapping))    
         const {unmatched_concepts, unmatched_entities} = rdf_service.writeMappings(generated_mapping, synfony_mappings)
         console.warn(`
-Unmatched concept (present in ontology file, but not in synfony entities):
+${unmatched_concepts.length} unmatched concepts (present in ontology file, but not in synfony entities):
 \t${unmatched_concepts.join('\n\t')}
 
-Unmatched entities (present in synfony entites file, but not in ontology file):
+${unmatched_entities.length} unmatched entities (present in synfony entites file, but not in ontology file):
 \t${unmatched_entities.join('\n\t')}
         `)
     }
