@@ -24,8 +24,8 @@ ${unmatched_entities.length} unmatched entities (present in synfony entites file
 const cli = new commander.Command()
 cli
     .argument('[ontologyPath]', "Path to a file or folder containing ontologies file (rdf/owl)", "D:/code/DEEPOMICS/deepomics-ontology/ontologies/deepomics-core.owl")
-    .argument('[synfonyEntitiesPath]', "Path to the file containing fully qualified synfony enities name", "./entity_mappings.txt")
-    .argument('[outputPath]', "Path to the generated synfony's resource's config's .yaml file", "./out/generated_bis.yaml")
+    .argument('[synfonyEntitiesPath]', "Path to the file containing fully qualified synfony enities name", "D:/code/DEEPOMICS/ontology-to-synfony-vocabulary/entity_mappings.txt")
+    .argument('[outputPath]', "Path to the generated synfony's resource's config's .yaml file", "D:/code/DEEPOMICS/ontology-to-synfony-vocabulary/generated/generated_bis.yaml")
     .action(function (ontologyPath, synfonyEntitiesPath, outputPath) {
         const ontology_path = path.resolve(ontologyPath);
         const synfony_entities_path = path.resolve(synfonyEntitiesPath);
