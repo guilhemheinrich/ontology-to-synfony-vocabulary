@@ -2,7 +2,7 @@
   "name": "ontology-to-synfony-vocabulary",
   "version": "1.0.0",
   "description": "",
-  "main": "entrypoint.ts",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc"
