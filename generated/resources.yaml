@@ -1,0 +1,240 @@
+resources:
+  App\Entity\Metadata\Industrial\Site:
+    iri: http://opendata.inrae.fr/deepomics/Site
+    properties:
+      biotechnologicalProcesss:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasBiotechnologicalProcess
+            '@type': http://opendata.inrae.fr/deepomics/Process
+      operators:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasOperator
+            '@type': ''
+  App\Entity\Metadata\Project:
+    iri: http://opendata.inrae.fr/deepomics/Project
+    properties:
+      contact:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasContact
+            '@type': http://xmlns.com/foaf/01/Agent
+      coordinator:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics/hasCoordinator
+            '@type': http://xmlns.com/foaf/01/Agent
+      observers:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics/hasObserver
+            '@type': http://xmlns.com/foaf/01/Agent
+      participants:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics/hasParticipant
+            '@type': http://xmlns.com/foaf/01/Agent
+      experimentalSeries:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics/ontology#hasExperimentalSerie
+            '@type': http://opendata.inrae.fr/deepomics/ExperimentalSeries
+      samples:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics/ontology#hasSample
+            '@type': http://opendata.inrae.fr/deepomics/Sample
+      endDate:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics/ontology#endDate
+            '@type': http://www.w3.org/2001/XMLSchema#dateTime
+      startDate:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics/ontology#startDate
+            '@type': http://www.w3.org/2001/XMLSchema#dateTime
+  App\Entity\Metadata\Laboratory\ExperimentalSeries:
+    iri: http://opendata.inrae.fr/deepomics/ExperimentalSeries
+    properties:
+      operators:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasOperator
+            '@type': ''
+      processCategory:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasProcessCategory
+            '@type': http://opendata.inrae.fr/deepomics/ProcessCategory
+      projects:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasProject
+            '@type': http://opendata.inrae.fr/deepomics/Project
+      referent:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasReferent
+            '@type': http://xmlns.com/foaf/01/Agent
+  App\Entity\Metadata\Sample\Sample:
+    iri: http://opendata.inrae.fr/deepomics/Sample
+    properties:
+      operators:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasOperator
+            '@type': ''
+  App\Entity\Metadata\Industrial\Campaign:
+    iri: http://opendata.inrae.fr/deepomics/Campaign
+    properties:
+      operators:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasOperator
+            '@type': ''
+      projects:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasProject
+            '@type': http://opendata.inrae.fr/deepomics/Project
+      referent:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasReferent
+            '@type': http://xmlns.com/foaf/01/Agent
+      sites:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasSite
+            '@type': http://opendata.inrae.fr/deepomics/Site
+  App\Entity\BioInfo\SequencingRun\SequencingRun:
+    iri: http://opendata.inrae.fr/deepomics/SequencingRun
+    properties:
+      procedure:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasProcedure
+            '@type': http://opendata.inrae.fr/deepomics#Procedure
+      sequencer:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasSequencer
+            '@type': http://opendata.inrae.fr/deepomics#Sequencer
+  App\Entity\Metadata\Laboratory\Reactor:
+    iri: http://opendata.inrae.fr/deepomics/Reactor
+    properties:
+      shapes:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasShape
+            '@type': http://opendata.inrae.fr/deepomics#ReactorShape
+  App\Entity\Metadata\Inputs\Input:
+    iri: http://opendata.inrae.fr/deepomics/Input
+    properties:
+      usage:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasUsage
+            '@type': http://opendata.inrae.fr/deepomics#Usage
+      operators:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasOperator
+            '@type': ''
+  App\Entity\Metadata\Laboratory\Compartment:
+    iri: http://opendata.inrae.fr/deepomics/Compartment
+    properties:
+      feedingTypes:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasFeedingType
+            '@type': df_1_1
+  App\Entity\Metadata\Industrial\Processes\Aeration:
+    iri: http://opendata.inrae.fr/deepomics#Aeration
+    properties:
+      unit:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasUnit
+            '@type': http://opendata.inrae.fr/deepomics#Unit
+  App\Entity\Metadata\Industrial\Processes\Leachate:
+    iri: http://opendata.inrae.fr/deepomics#Leachate
+    properties:
+      usage:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasUsage
+            '@type': http://opendata.inrae.fr/deepomics#Usage
+      operators:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasOperator
+            '@type': ''
+  App\Entity\BioInfo\SequencingRun\Library:
+    iri: http://opendata.inrae.fr/deepomics#Library
+    properties: {}
+  App\Entity\Metadata\Laboratory\Membrane:
+    iri: http://opendata.inrae.fr/deepomics#Membrane
+    properties: {}
+  App\Entity\BioInfo\SequencingRun\NucleicAcidDosageMethod:
+    iri: http://opendata.inrae.fr/deepomics#NucleicAcidDosageMethod
+    properties: {}
+  App\Entity\BioInfo\SequencingRun\NucleicAcidExtractionMethod:
+    iri: http://opendata.inrae.fr/deepomics#NucleicAcidExtractionMethod
+    properties: {}
+  App\Entity\Metadata\Inputs\Organism:
+    iri: http://opendata.inrae.fr/deepomics#Organism
+    properties:
+      usage:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasUsage
+            '@type': http://opendata.inrae.fr/deepomics#Usage
+      operators:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasOperator
+            '@type': ''
+  App\Entity\BioInfo\SequencingRun\Sequencer:
+    iri: http://opendata.inrae.fr/deepomics#Sequencer
+    properties: {}
+  App\Entity\Metadata\Industrial\Processes\Temperature:
+    iri: http://opendata.inrae.fr/deepomics#Temperature
+    properties:
+      unit:
+        attributes:
+          jsonld_context:
+            '@id': http://opendata.inrae.fr/deepomics#hasUnit
+            '@type': http://opendata.inrae.fr/deepomics#Unit
+  App\Entity\Metadata\Unit:
+    iri: http://opendata.inrae.fr/deepomics#Unit
+    properties: {}
+  App\Entity\Metadata\Usage:
+    iri: http://opendata.inrae.fr/deepomics#Usage
+    properties: {}
+  App\Entity\BioInfo\BioinformaticAnalyses\BioinformaticWorkflow:
+    iri: http://opendata.inrae.fr/deepomics/BioinformaticWorkflow
+    properties: {}
+  App\Entity\Metadata\Industrial\Processes\Process:
+    iri: http://opendata.inrae.fr/deepomics/Process
+    properties: {}
+  App\Entity\BioInfo\BioinformaticAnalyses\MetabarcodingBioinformaticRun:
+    iri: http://opendata.inrae.fr/deepomics/MetabarcodingBioinformaticRun
+    properties: {}
+  App\Entity\BioInfo\SequencingRun\PcrConditions:
+    iri: http://opendata.inrae.fr/deepomics/PcrConditions
+    properties: {}
+  App\Entity\Metadata\Industrial\Processes\ProcessCategory:
+    iri: http://opendata.inrae.fr/deepomics/ProcessCategory
+    properties: {}
+  App\Entity\BioInfo\SequencingRun\SequencingSample:
+    iri: http://opendata.inrae.fr/deepomics/SequencingSample
+    properties: {}
+  App\Entity\BioInfo\BioinformaticAnalyses\Annotation:
+    iri: http://opendata.inrae.fr/deepomics/Annotation
+    properties: {}
+  App\Entity\BioInfo\BioinformaticAnalyses\Taxonomy:
+    iri: http://opendata.inrae.fr/deepomics/Taxonomy
+    properties: {}

@@ -1,0 +1,5151 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://opendata.inrae.fr/deepomics#"
+     xml:base="http://opendata.inrae.fr/deepomics"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:dpc="http://opendata.inrae.fr/deepomics#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="http://opendata.inrae.fr/deepomics">
+        <owl:versionIRI rdf:resource="http://opendata.inrae.fr/deepomics"/>
+        <ns:license xml:lang="en">https://creativecommons.org/licenses/by/4.0/</ns:license>
+        <owl:versionInfo xml:lang="en">Version 1 (2023) created by INRAE</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/ns#license -->
+
+    <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#maxQualifiedCardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#maxQualifiedCardinality"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#minQualifiedCardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#minQualifiedCardinality"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#closeMatch -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasBiotechnologicalProcess -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#hasBiotechnologicalProcess">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Site"/>
+        <rdfs:range rdf:resource="http://opendata.inrae.fr/deepomics/Process"/>
+        <rdfs:label xml:lang="en">Has biotechnological process</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasContact -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#hasContact">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Project"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+        <rdfs:label xml:lang="en">Has contact</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasOperator -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#hasOperator">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/ExperimentalSeries"/>
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Sample"/>
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Campaign"/>
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Site"/>
+        <rdfs:label xml:lang="en">Has operator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasProcedure -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#hasProcedure">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/SequencingRun"/>
+        <rdfs:range rdf:resource="http://opendata.inrae.fr/deepomics#Procedure"/>
+        <rdfs:label xml:lang="en">Has procedure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasProcessCategory -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#hasProcessCategory">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/ExperimentalSeries"/>
+        <rdfs:range rdf:resource="http://opendata.inrae.fr/deepomics/ProcessCategory"/>
+        <rdfs:label xml:lang="en">Has process category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasProject -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#hasProject">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/ExperimentalSeries"/>
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Campaign"/>
+        <rdfs:range rdf:resource="http://opendata.inrae.fr/deepomics/Project"/>
+        <rdfs:label xml:lang="en">Has project</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasReferent -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#hasReferent">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/ExperimentalSeries"/>
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Campaign"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+        <rdfs:label xml:lang="en">Has referent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasSequencer -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#hasSequencer">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/SequencingRun"/>
+        <rdfs:range rdf:resource="http://opendata.inrae.fr/deepomics#Sequencer"/>
+        <rdfs:label xml:lang="en">Has sequencer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasShape -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#hasShape">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Reactor"/>
+        <rdfs:range rdf:resource="http://opendata.inrae.fr/deepomics#ReactorShape"/>
+        <rdfs:label xml:lang="en">Shape</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasSite -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#hasSite">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Campaign"/>
+        <rdfs:range rdf:resource="http://opendata.inrae.fr/deepomics/Site"/>
+        <rdfs:label xml:lang="en">Has site</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasUnit -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#hasUnit">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/MonitoredParameter"/>
+        <rdfs:range rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+        <rdfs:label xml:lang="en">Has unit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasUsage -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#hasUsage">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Input"/>
+        <rdfs:range rdf:resource="http://opendata.inrae.fr/deepomics#Usage"/>
+        <rdfs:label xml:lang="en">Has usage</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics#isPartOf">
+        <rdfs:label xml:lang="en">Is part of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/hasCoordinator -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics/hasCoordinator">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Project"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+        <rdfs:comment xml:lang="en">Link to express that a project is coordinated by an agent</rdfs:comment>
+        <rdfs:label xml:lang="en">Has coordinator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/hasObserver -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics/hasObserver">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Project"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+        <rdfs:comment xml:lang="en">Link to express that a project is observed by an agent</rdfs:comment>
+        <rdfs:label xml:lang="en">Has observer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics/hasParticipant">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Project"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+        <rdfs:comment xml:lang="en">Link to express that an agent participates in a Project</rdfs:comment>
+        <rdfs:label xml:lang="en">Has participant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/ontology#hasExperimentalSerie -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics/ontology#hasExperimentalSerie">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Project"/>
+        <rdfs:range rdf:resource="http://opendata.inrae.fr/deepomics/ExperimentalSeries"/>
+        <rdfs:label xml:lang="en">Has experimental serie</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/ontology#hasSample -->
+
+    <owl:ObjectProperty rdf:about="http://opendata.inrae.fr/deepomics/ontology#hasSample">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Project"/>
+        <rdfs:range rdf:resource="http://opendata.inrae.fr/deepomics/Sample"/>
+        <rdfs:label xml:lang="en">Has biosample</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Height -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.inrae.fr/deepomics#Height">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics#Circular"/>
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics#Rectangular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">Height (cm)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Lenght -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.inrae.fr/deepomics#Lenght">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics#Rectangular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">Lenght (cm)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Radius -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.inrae.fr/deepomics#Radius">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics#Circular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">Radius (cm)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#WholeReactorVolume -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.inrae.fr/deepomics#WholeReactorVolume">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics#Circular"/>
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics#Rectangular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">Whole ractor volume (L)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Width -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.inrae.fr/deepomics#Width">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics#Rectangular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">Width (cm)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#WorkingVolume -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.inrae.fr/deepomics#WorkingVolume">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics#Circular"/>
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics#Rectangular"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#hasFeedingType -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.inrae.fr/deepomics#hasFeedingType">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/Compartment"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Bacth</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Continuous</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>Semi-continous</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">Feeding type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#status -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.inrae.fr/deepomics#status">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">Status</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/ontology#endDate -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.inrae.fr/deepomics/ontology#endDate">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/TemporalEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">End date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/ontology#startDate -->
+
+    <owl:DatatypeProperty rdf:about="http://opendata.inrae.fr/deepomics/ontology#startDate">
+        <rdfs:domain rdf:resource="http://opendata.inrae.fr/deepomics/TemporalEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">Start date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Acetate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Acetate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids"/>
+        <rdfs:label xml:lang="en">Acetate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AcidDetergentFiber -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AcidDetergentFiber">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#VanSoestFractionationAndPolysaccharides"/>
+        <rdfs:label xml:lang="en">Acid detergent fiber</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AcidDetergentInsoluble -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AcidDetergentInsoluble">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#VanSoestFractionationAndPolysaccharides"/>
+        <rdfs:label xml:lang="en">Acid detergent insoluble</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AcidDetergentLignin -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AcidDetergentLignin">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#VanSoestFractionationAndPolysaccharides"/>
+        <rdfs:label xml:lang="en">Acid detergent lignin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AcidInsolubleAsh -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AcidInsolubleAsh">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#VanSoestFractionationAndPolysaccharides"/>
+        <rdfs:label xml:lang="en">Acid insoluble ash</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AcidogenicFermentation -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AcidogenicFermentation">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Anaerobic"/>
+        <rdfs:label xml:lang="en">Acidogenic fermentation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ActivatedSludge -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ActivatedSludge">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Aerobic"/>
+        <rdfs:label xml:lang="en">Activated sludge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Aeration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Aeration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BasicOperatingParameters"/>
+        <rdfs:label xml:lang="en">Aeration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Aerobic -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Aerobic">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Treatment"/>
+        <rdfs:label xml:lang="en">Aerobic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AerobicBioreactor -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AerobicBioreactor">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Landfill"/>
+        <rdfs:label xml:lang="en">Aerobic bioreactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AgriculturalResidus -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AgriculturalResidus">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AlgaeOrCyanobacteriaOrCropBased"/>
+        <rdfs:label xml:lang="en">Agricultural residus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AirFlowRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AirFlowRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Flows"/>
+        <rdfs:label xml:lang="en">Air flow rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Alcohols -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Alcohols">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis"/>
+        <rdfs:label xml:lang="en">Alcohols</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AlgaeOrCyanobacteria -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AlgaeOrCyanobacteria">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AlgaeOrCyanobacteriaOrCropBased"/>
+        <rdfs:label xml:lang="en">Algae or Cyanobacteria</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AlgaeOrCyanobacteriaOrCropBased -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AlgaeOrCyanobacteriaOrCropBased">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/Input"/>
+        <rdfs:label xml:lang="en">Algae or Cyanobacteria or Crop based</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Alpha-KetoAcid -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Alpha-KetoAcid">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids"/>
+        <rdfs:label xml:lang="en">Alpha-Keto acid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AmmoniumProductionRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AmmoniumProductionRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ProductionRates"/>
+        <rdfs:label xml:lang="en">Ammonium production rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AmmoniumTreatment -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AmmoniumTreatment">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BiologicalAeratedFilter"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#MovingBedBiologicalReactor"/>
+        <rdfs:label xml:lang="en">Ammonium treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AmmoniumUptakeRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AmmoniumUptakeRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#UptakeRates"/>
+        <rdfs:label xml:lang="en">Ammonium uptake rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AmperePerM2 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AmperePerM2">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Anaerobic -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Anaerobic">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Treatment"/>
+        <rdfs:label xml:lang="en">Anaerobic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AnaerobicFilter -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AnaerobicFilter">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Wet"/>
+        <rdfs:label xml:lang="en">Anaerobic filter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AnionExchange -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AnionExchange">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Membrane"/>
+        <rdfs:label xml:lang="en">Anion exchange</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AnionExchangeAndCationExchange -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AnionExchangeAndCationExchange">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Membrane"/>
+        <rdfs:label xml:lang="en">Anion exchange and cation exchange</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AnionicSurfactant -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AnionicSurfactant">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis"/>
+        <rdfs:label xml:lang="en">Anionic surfactant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Anions -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Anions">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis"/>
+        <rdfs:label xml:lang="en">Anions</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Anode -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Anode">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Electrofermentation"/>
+        <rdfs:label xml:lang="en">Anode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AnodeAndCathode -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AnodeAndCathode">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Electrofermentation"/>
+        <rdfs:label xml:lang="en">Anode and cathode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AnodeParameters -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AnodeParameters">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalSystems"/>
+        <rdfs:label xml:lang="en">Anode parameters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AnodeProjectedSurface -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AnodeProjectedSurface">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AnodeParameters"/>
+        <rdfs:label xml:lang="en">Anode projected surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AnodeRealSurface -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AnodeRealSurface">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AnodeParameters"/>
+        <rdfs:label xml:lang="en">Anode real surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AnodicCoulombicEfficiency -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AnodicCoulombicEfficiency">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalPerformances"/>
+        <rdfs:label xml:lang="en">Anodic coulombic efficiency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AnoxicBioreactor -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AnoxicBioreactor">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Landfill"/>
+        <rdfs:label xml:lang="en">Anoxic bioreactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ApparentIsotopicFractionationFactor -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ApparentIsotopicFractionationFactor">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#IsotopicAnalysis"/>
+        <rdfs:label xml:lang="en">Apparent isotopic fractionation factor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AppliedAnodicPotential -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AppliedAnodicPotential">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AnodeParameters"/>
+        <rdfs:label xml:lang="en">Applied anodic potential</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AppliedCathodicPotential -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AppliedCathodicPotential">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#CathodeParameters"/>
+        <rdfs:label xml:lang="en">Applied cathodic potential</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AppliedElectrodePotential -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AppliedElectrodePotential">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElectrodeParameters"/>
+        <rdfs:label xml:lang="en">Applied electrode potential</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AppliedVoltage -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AppliedVoltage">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Inter-ElectrodeParameters"/>
+        <rdfs:label xml:lang="en">Applied voltage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Baffled -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Baffled">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Wet"/>
+        <rdfs:label xml:lang="en">Baffled</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Bar -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Bar">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Base -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Base">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#BasePairs -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#BasePairs">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#BasicOperatingParameters -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#BasicOperatingParameters">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OperatingParameters"/>
+        <rdfs:label xml:lang="en">Basic operating parameters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Batch -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Batch">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Dry"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Wet"/>
+        <rdfs:label xml:lang="en">Batch</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#BiochemicalOxygenDemand -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#BiochemicalOxygenDemand">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OxygenDemand"/>
+        <rdfs:label xml:lang="en">Biochemical oxygen demand</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#BioelectrochemicalPerformances -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#BioelectrochemicalPerformances">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalSystems"/>
+        <rdfs:label xml:lang="en">Bioelectrochemical performances</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#BioelectrochemicalSystem -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#BioelectrochemicalSystem">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/ProcessCategory"/>
+        <rdfs:label xml:lang="en">Bioelectrochemical system</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#BioelectrochemicalSystems -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#BioelectrochemicalSystems">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/MonitoredParameter"/>
+        <rdfs:label xml:lang="en">Bioelectrochemical systems</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#BiogasCumulatedProduction -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#BiogasCumulatedProduction">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Biogas cumulated production</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#BiogasProductionRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#BiogasProductionRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Biogas production rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#BiologicalAeratedFilter -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#BiologicalAeratedFilter">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#FixedBedReactor"/>
+        <rdfs:label xml:lang="en">Biological aerated filter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#BiologicalOxygenDemandDay25 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#BiologicalOxygenDemandDay25">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OxygenDemand"/>
+        <rdfs:label xml:lang="en">Biological oxygen demand day 25</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#BiologicalOxygenDemandDay5 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#BiologicalOxygenDemandDay5">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OxygenDemand"/>
+        <rdfs:label xml:lang="en">Biological oxygen demand day 5</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#BiologicalOxygenDemandDay5Removal -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#BiologicalOxygenDemandDay5Removal">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Removal"/>
+        <rdfs:label xml:lang="en">Biological oxygen demand day 5 removal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Bioserv -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Bioserv">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#NucleicAcidDosageMethod"/>
+        <rdfs:label xml:lang="en">Bioserv</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Biowaste -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Biowaste">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Digestate"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/Input"/>
+        <rdfs:label xml:lang="en">Biowaste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Br-Concentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Br-Concentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Anions"/>
+        <rdfs:label xml:lang="en">Br Concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Buffer -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Buffer">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Usage"/>
+        <rdfs:label xml:lang="en">Buffer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Butanol -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Butanol">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Alcohols"/>
+        <rdfs:label xml:lang="en">Butanol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Butyrate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Butyrate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids"/>
+        <rdfs:label xml:lang="en">Butyrate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CO2ProductionRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CO2ProductionRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">CO2 production rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#COverN -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#COverN">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BasicOperatingParameters"/>
+        <rdfs:label xml:lang="en">CO2 production rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CSTR -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CSTR">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Wet"/>
+        <rdfs:label xml:lang="en">CSTR</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CalorimetricPerformances -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CalorimetricPerformances">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ProcessPerformanceParameters"/>
+        <rdfs:label xml:lang="en">Calorimetric performances</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Caproate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Caproate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids"/>
+        <rdfs:label xml:lang="en">Caproate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CarbonAndNitrogenTreatment -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CarbonAndNitrogenTreatment">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#CarbonTreatment"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#MovingBedBiologicalReactor"/>
+        <rdfs:label xml:lang="en">Carbon and nitrogen treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CarbonTreatment -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CarbonTreatment">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BiologicalAeratedFilter"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#MovingBedBiologicalReactor"/>
+        <rdfs:label xml:lang="en">Carbon treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Cathode -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Cathode">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Electrofermentation"/>
+        <rdfs:label xml:lang="en">Cathode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CathodeParameters -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CathodeParameters">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalSystems"/>
+        <rdfs:label xml:lang="en">Cathode parameters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CathodeProjectedSurface -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CathodeProjectedSurface">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#CathodeParameters"/>
+        <rdfs:label xml:lang="en">Cathode projected surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CathodeRealSurface -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CathodeRealSurface">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#CathodeParameters"/>
+        <rdfs:label xml:lang="en">Cathode real surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CathodicCoulombicEfficiency -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CathodicCoulombicEfficiency">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalPerformances"/>
+        <rdfs:label xml:lang="en">Cathodic coulombic efficiency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CationExchange -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CationExchange">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Membrane"/>
+        <rdfs:label xml:lang="en">Cation exchange</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CationicSurfactant -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CationicSurfactant">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis"/>
+        <rdfs:label xml:lang="en">Cationic surfactant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Cations -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Cations">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis"/>
+        <rdfs:label xml:lang="en">Cations</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Cattle -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Cattle">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Manure"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Slurry"/>
+        <rdfs:label xml:lang="en">Cattle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Centimetre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Centimetre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/MonitoredParameter"/>
+        <rdfs:label xml:lang="en">Chemical and physical analysis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ChemicalCompounds -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ChemicalCompounds">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#LaboratoryInputs"/>
+        <rdfs:label xml:lang="en">Chemical compounds</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ChemicalOxygenDemand -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ChemicalOxygenDemand">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OxygenDemand"/>
+        <rdfs:label xml:lang="en">Chemical oxygen demand</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ChemicalOxygenDemandRemoval -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ChemicalOxygenDemandRemoval">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Removal"/>
+        <rdfs:label xml:lang="en">Chemical oxygen demand removal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Circular -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Circular">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ReactorShape"/>
+        <rdfs:label xml:lang="en">Circular</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Citrate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Citrate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids"/>
+        <rdfs:label xml:lang="en">Citrate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Cl-Concentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Cl-Concentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Anions"/>
+        <rdfs:label xml:lang="en">Cl Concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Compost -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Compost">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Leachate"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/Input"/>
+        <rdfs:label xml:lang="en">Compost</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Composting -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Composting">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Aerobic"/>
+        <rdfs:label xml:lang="en">Composting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Conductivity -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Conductivity">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis"/>
+        <rdfs:label xml:lang="en">Conductivity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CopyNumberPerMg -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CopyNumberPerMg">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CopyNumberPerMgDco -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CopyNumberPerMgDco">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CopyNumberPerMicroLitre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CopyNumberPerMicroLitre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CopyNumberPerMillilitre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CopyNumberPerMillilitre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Coulomb -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Coulomb">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CubicMetre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CubicMetre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CubicMetrePerHour -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CubicMetrePerHour">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CultivatedAlgaeOrCyanobacteria -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CultivatedAlgaeOrCyanobacteria">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AlgaeOrCyanobacteria"/>
+        <rdfs:label xml:lang="en">Cultivated algae or cyanobacteria</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CumulatedCH4Production -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CumulatedCH4Production">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Cumulated CH4 production</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CumulatedCO2Production -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CumulatedCO2Production">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Cumulated CO2 production</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CumulatedCharge -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CumulatedCharge">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalPerformances"/>
+        <rdfs:label xml:lang="en">Cumulated charge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CumulatedH2Production -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CumulatedH2Production">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Cumulated H2 production</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CumulatedH2SProduction -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CumulatedH2SProduction">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Cumulated H2S production</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CumulatedN2OProduction -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CumulatedN2OProduction">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Cumulated N2O production</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CumulatedN2Production -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CumulatedN2Production">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Cumulated N2 production</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CumulatedNH3Production -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CumulatedNH3Production">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Cumulated NH3 production</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CumulatedO2Production -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CumulatedO2Production">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Cumulated O2 production</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Cycles -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Cycles">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DNeasyPowerSoilKitQiagen -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DNeasyPowerSoilKitQiagen">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#NucleicAcidExtractionMethod"/>
+        <rdfs:label xml:lang="en">DNeasy PowerSoil Kit, Qiagen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DarkFermentation -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DarkFermentation">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AcidogenicFermentation"/>
+        <rdfs:label xml:lang="en">Dark fermentation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Day -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Day">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DegreeCelsius -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DegreeCelsius">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Delta-Ct -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Delta-Ct">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#qPCR/RT-qPCR"/>
+        <rdfs:label xml:lang="en">Delta Ct</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Delta-Delta-Ct -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Delta-Delta-Ct">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#qPCR/RT-qPCR"/>
+        <rdfs:label xml:lang="en">Delta delta Ct</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Digestate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Digestate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#DigestateOrWasteWaterSludge"/>
+        <rdfs:label xml:lang="en">Digestate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DigestateOrWasteWaterSludge -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DigestateOrWasteWaterSludge">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/Input"/>
+        <rdfs:label xml:lang="en">Digestate or wastewater sludge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Digestion -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Digestion">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Anaerobic"/>
+        <rdfs:label xml:lang="en">Digestion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DissolvedGases -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DissolvedGases">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis"/>
+        <rdfs:label xml:lang="en">Dissolved gases</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DissolvedInorganicCarbon -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DissolvedInorganicCarbon">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElementalAnalysis"/>
+        <rdfs:label xml:lang="en">Dissolved inorganic carbon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DissolvedN2O -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DissolvedN2O">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#DissolvedGases"/>
+        <rdfs:label xml:lang="en">Dissolved N2O</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DissolvedNH3 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DissolvedNH3">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#DissolvedGases"/>
+        <rdfs:label xml:lang="en">Dissolved NH3</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DissolvedNO -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DissolvedNO">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#DissolvedGases"/>
+        <rdfs:label xml:lang="en">Dissolved NO</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DissolvedOrganicCarbon -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DissolvedOrganicCarbon">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElementalAnalysis"/>
+        <rdfs:label xml:lang="en">Dissolved organic carbon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DissolvedOxygen -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DissolvedOxygen">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#DissolvedGases"/>
+        <rdfs:label xml:lang="en">Dissolved oxygen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Distance -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Distance">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherMonitoredParameters"/>
+        <rdfs:label xml:lang="en">Distance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DnaCopyNumber -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DnaCopyNumber">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#qPCR/RT-qPCR"/>
+        <rdfs:label xml:lang="en">Dna copy number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#DredgingSpoil -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#DredgingSpoil">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherSolidWaste"/>
+        <rdfs:label xml:lang="en">Dredging spoil</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Dry -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Dry">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#DarkFermentation"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Digestion"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Non-H2OrientedFermentation"/>
+        <rdfs:label xml:lang="en">Dry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#EGSB -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#EGSB">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Wet"/>
+        <rdfs:label xml:lang="en">EGSB</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#EffluentSolubleChemicalOxygenDemand -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#EffluentSolubleChemicalOxygenDemand">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis"/>
+        <rdfs:label xml:lang="en">Effluent soluble chemical oxygen demand</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ElectrodeParameters -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ElectrodeParameters">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalSystems"/>
+        <rdfs:label xml:lang="en">Electrode parameters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ElectrodePotential -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ElectrodePotential">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElectrodeParameters"/>
+        <rdfs:label xml:lang="en">Electrode potential</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ElectrodeProjectedSurface -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ElectrodeProjectedSurface">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElectrodeParameters"/>
+        <rdfs:label xml:lang="en">Electrode projected surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ElectrodeRealSurface -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ElectrodeRealSurface">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElectrodeParameters"/>
+        <rdfs:label xml:lang="en">Electrode real surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Electrofermentation -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Electrofermentation">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalSystem"/>
+        <rdfs:label xml:lang="en">Electrofermentation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ElementalAnalysis -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ElementalAnalysis">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis"/>
+        <rdfs:label xml:lang="en">Elemental analysis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#EnergeticCrops -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#EnergeticCrops">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AlgaeOrCyanobacteriaOrCropBased"/>
+        <rdfs:label xml:lang="en">Energetic crops</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Ethanol -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Ethanol">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Alcohols"/>
+        <rdfs:label xml:lang="en">Ethanol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#F-Concentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#F-Concentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Anions"/>
+        <rdfs:label xml:lang="en">F Concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Farm -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Farm">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Digestate"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Mixed"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Primary"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Secundary"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#WasteWater"/>
+        <rdfs:label xml:lang="en">Farm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#FastDNASpinKitforSoilMPBiomedicals -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#FastDNASpinKitforSoilMPBiomedicals">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#NucleicAcidExtractionMethod"/>
+        <rdfs:label xml:lang="en">FastDNA Spin Kit for Soil, MP Biomedicals</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#FinalPressure -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#FinalPressure">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Final pressure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#FixedBedReactor -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#FixedBedReactor">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Aerobic"/>
+        <rdfs:label xml:lang="en">Fixed bed reactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Flow -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Flow">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Flows"/>
+        <rdfs:label xml:lang="en">Flow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Flows -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Flows">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/MonitoredParameter"/>
+        <rdfs:label xml:lang="en">Flows</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#FluidizedBedReactor -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#FluidizedBedReactor">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Aerobic"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Wet"/>
+        <rdfs:label xml:lang="en">Fluidized bed reactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#FoodAndFoodProcessingWaste -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#FoodAndFoodProcessingWaste">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Biowaste"/>
+        <rdfs:label xml:lang="en">Food and food processing waste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#FoodWasteDepackaging -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#FoodWasteDepackaging">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Pre-OrPost-Treatment"/>
+        <rdfs:label xml:lang="en">Food waste depackaging</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Formate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Formate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids"/>
+        <rdfs:label xml:lang="en">Formate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#FromDigestate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#FromDigestate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Compost"/>
+        <rdfs:label xml:lang="en">From digestate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#FromGreenTide -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#FromGreenTide">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AlgaeOrCyanobacteria"/>
+        <rdfs:label xml:lang="en">From green tide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#FromGreenWaste -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#FromGreenWaste">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Compost"/>
+        <rdfs:label xml:lang="en">From green waste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#FromHouseholdOrganicWaste -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#FromHouseholdOrganicWaste">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Compost"/>
+        <rdfs:label xml:lang="en">From household organic waste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#FromManure -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#FromManure">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Compost"/>
+        <rdfs:label xml:lang="en">From manure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#FromWasteWaterSludge -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#FromWasteWaterSludge">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Compost"/>
+        <rdfs:label xml:lang="en">From wastewater sludge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Fructose -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Fructose">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Sugars"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#GNPerDay -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#GNPerDay">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#GNPerHour -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#GNPerHour">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#GO2PerKg -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#GO2PerKg">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#GO2PerL -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#GO2PerL">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#GasAnalysis -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#GasAnalysis">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/MonitoredParameter"/>
+        <rdfs:label xml:lang="en">Gas analysis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#GeneCopyNumber -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#GeneCopyNumber">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#qPCR/RT-qPCR"/>
+        <rdfs:label xml:lang="en">Gene copy number</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Gigabase -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Gigabase">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#GigabasePair -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#GigabasePair">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Glycerol -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Glycerol">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Alcohols"/>
+        <rdfs:label xml:lang="en">Glycerol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Gram -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Gram">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#GramPerLitre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#GramPerLitre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#GreaseTank -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#GreaseTank">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GreaseWaste"/>
+        <rdfs:label xml:lang="en">Grease tank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#GreaseWaste -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#GreaseWaste">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/Input"/>
+        <rdfs:label xml:lang="en">Grease waste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#GreenWaste -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#GreenWaste">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Biowaste"/>
+        <rdfs:label xml:lang="en">Green waste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#GrowthSupport -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#GrowthSupport">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Usage"/>
+        <rdfs:label xml:lang="en">Growth support</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#HeadSpace -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#HeadSpace">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Usage"/>
+        <rdfs:label xml:lang="en">Headspace</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#HeatProductionRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#HeatProductionRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#CalorimetricPerformances"/>
+        <rdfs:label xml:lang="en">Heat production rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#HighRateOpenPond -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#HighRateOpenPond">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Aerobic"/>
+        <rdfs:label xml:lang="en">High rate open pond</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Hour -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Hour">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#HourInverse -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#HourInverse">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Household -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Household">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#FoodAndFoodProcessingWaste"/>
+        <rdfs:label xml:lang="en">Household</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#HouseholdWaste -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#HouseholdWaste">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Digestate"/>
+        <rdfs:label xml:lang="en">Household waste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#HydraulicLoad -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#HydraulicLoad">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BasicOperatingParameters"/>
+        <rdfs:label xml:lang="en">Hydraulic load</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#HydraulicRetentionTime -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#HydraulicRetentionTime">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BasicOperatingParameters"/>
+        <rdfs:label xml:lang="en">Hydraulic retention time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#IlluminaHiSeq -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#IlluminaHiSeq">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Sequencer"/>
+        <rdfs:label xml:lang="en">Illumina HiSeq</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#IlluminaMiSeq -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#IlluminaMiSeq">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Sequencer"/>
+        <rdfs:label xml:lang="en">Illumina MiSeq</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Industrial -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Industrial">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Digestate"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Mixed"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Primary"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Secundary"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#WasteWater"/>
+        <rdfs:label xml:lang="en">Industrial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#InitialPressure -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#InitialPressure">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Initial pressure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#InletFlowRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#InletFlowRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Flows"/>
+        <rdfs:label xml:lang="en">Inlet flow rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Inoculum -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Inoculum">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Usage"/>
+        <rdfs:label xml:lang="en">Inoculum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#InoculumOverSubstrateRatio -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#InoculumOverSubstrateRatio">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BasicOperatingParameters"/>
+        <rdfs:label xml:lang="en">Inoculum over substrate ratio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#IntegratedFilmActivatedSludge -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#IntegratedFilmActivatedSludge">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#FluidizedBedReactor"/>
+        <rdfs:label xml:lang="en">Integrated film activated sludge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Inter-ElectrodeParameters -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Inter-ElectrodeParameters">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalSystems"/>
+        <rdfs:label xml:lang="en">Inter-electrode parameters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#IntermediateCrops -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#IntermediateCrops">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AlgaeOrCyanobacteriaOrCropBased"/>
+        <rdfs:label xml:lang="en">Intermediate crops</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#IsotopicAnalysis -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#IsotopicAnalysis">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis"/>
+        <rdfs:label xml:lang="en">Isotopic analysis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Joule -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Joule">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Kelvin -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Kelvin">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#KgBodKgVssPerDay -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#KgBodKgVssPerDay">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#KgCodPerDay -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#KgCodPerDay">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#KgNPerDay -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#KgNPerDay">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#KgNPerHour -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#KgNPerHour">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#KgO2PerHour -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#KgO2PerHour">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#KgTknPerDay -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#KgTknPerDay">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Kilobase -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Kilobase">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#KilobasePair -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#KilobasePair">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Kilodalton -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Kilodalton">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Kilogram -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Kilogram">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#LaboratoryInputs -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#LaboratoryInputs">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/Input"/>
+        <rdfs:label xml:lang="en">Laboratory inputs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Lactate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Lactate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids"/>
+        <rdfs:label xml:lang="en">Lactate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Landfill -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Landfill">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Anaerobic"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Leachate"/>
+        <rdfs:label xml:lang="en">Landfill</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#LargeProducersOrIndustrial -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#LargeProducersOrIndustrial">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#FoodAndFoodProcessingWaste"/>
+        <rdfs:label xml:lang="en">Large producers or industrial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Leachate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Leachate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#WasteWater"/>
+        <rdfs:label xml:lang="en">Leachate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#LeachingBed -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#LeachingBed">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Dry"/>
+        <rdfs:label xml:lang="en">Leaching bed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Library -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Library">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Procedure"/>
+        <rdfs:label xml:lang="en">Library procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Litre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Litre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#LitrePerDay -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#LitrePerDay">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#LitrePerHour -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#LitrePerHour">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#LitrePerHourPerM2PerBar -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#LitrePerHourPerM2PerBar">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#LitrePerMinute -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#LitrePerMinute">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#LitrePerSeconde -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#LitrePerSeconde">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MINION -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MINION">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Sequencer"/>
+        <rdfs:label xml:lang="en">MINION</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MaPerCm2 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MaPerCm2">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Malate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Malate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids"/>
+        <rdfs:label xml:lang="en">Malate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ManufacturedMaterials -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ManufacturedMaterials">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherSolidWaste"/>
+        <rdfs:label xml:lang="en">Manufactured materials</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Manure -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Manure">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ManureSlurryUrine"/>
+        <rdfs:label xml:lang="en">Manure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ManureSlurryUrine -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ManureSlurryUrine">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/Input"/>
+        <rdfs:label xml:lang="en">Manure, slurry, urine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Mass -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Mass">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherMonitoredParameters"/>
+        <rdfs:label xml:lang="en">Mass</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MaximalCurrentDensity -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MaximalCurrentDensity">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalPerformances"/>
+        <rdfs:label xml:lang="en">Maximal current density</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MaximalPowerDensityPerSurface -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MaximalPowerDensityPerSurface">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalPerformances"/>
+        <rdfs:label xml:lang="en">Maximal power density per surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MaximalPowerDensityPerVolume -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MaximalPowerDensityPerVolume">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalPerformances"/>
+        <rdfs:label xml:lang="en">Maximal power density per volume</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Mbar -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Mbar">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MeanCurrentDensity -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MeanCurrentDensity">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalPerformances"/>
+        <rdfs:label xml:lang="en">Mean current density</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MeasuredAnodePotential -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MeasuredAnodePotential">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AnodeParameters"/>
+        <rdfs:label xml:lang="en">Measure anode potential</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MeasuredCathodicPotential -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MeasuredCathodicPotential">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#CathodeParameters"/>
+        <rdfs:label xml:lang="en">Measured cathodic potential</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MeasuredVoltage -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MeasuredVoltage">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Inter-ElectrodeParameters"/>
+        <rdfs:label xml:lang="en">Measure voltage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MediumProducers -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MediumProducers">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#FoodAndFoodProcessingWaste"/>
+        <rdfs:label xml:lang="en">Medium producers</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Megabase -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Megabase">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MegabasePair -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MegabasePair">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Membrane -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Membrane">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#isPartOf"/>
+                <owl:someValuesFrom rdf:resource="http://opendata.inrae.fr/deepomics/Reactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Membrane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MembraneBioreactorPerformance -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MembraneBioreactorPerformance">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ProcessPerformanceParameters"/>
+        <rdfs:label xml:lang="en">Membrane bioreactor performance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MembranePermeability -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MembranePermeability">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#MembraneBioreactorPerformance"/>
+        <rdfs:label xml:lang="en">Membrane permeability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Methanol -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Methanol">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Alcohols"/>
+        <rdfs:label xml:lang="en">Methanol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Method -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Method">
+        <rdfs:label xml:lang="en">Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Metre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Metre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Metre3PerDay -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Metre3PerDay">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Metre3PerHour -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Metre3PerHour">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MgC -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MgC">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MgCPerL -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MgCPerL">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MgHco3PerL -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MgHco3PerL">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MgNPerGVssPerHour -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MgNPerGVssPerHour">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MgNPerL -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MgNPerL">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MgNPerLHour -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MgNPerLHour">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MgO2PerGVssPerHour -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MgO2PerGVssPerHour">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MgO2PerL -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MgO2PerL">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MgO2PerLPerHour -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MgO2PerLPerHour">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MgPPerL -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MgPPerL">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MgPerLitre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MgPerLitre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MgSPerL -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MgSPerL">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MiSeq -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MiSeq">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Sequencer"/>
+        <rdfs:label xml:lang="en">MiSeq</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MicroSPerCm -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MicroSPerCm">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MicrobialDesalinationCell -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MicrobialDesalinationCell">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalSystem"/>
+        <rdfs:label xml:lang="en">Microbial desalination cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MicrobialElectrolysisCell -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MicrobialElectrolysisCell">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalSystem"/>
+        <rdfs:label xml:lang="en">Microbial electrolysis cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MicrobialFuelCell -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MicrobialFuelCell">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalSystem"/>
+        <rdfs:label xml:lang="en">Microbial fuel cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Microgram -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Microgram">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MicrogramPerMl -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MicrogramPerMl">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Microlitre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Microlitre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Milligram -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Milligram">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Millijoule -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Millijoule">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Millilitre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Millilitre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Milliwatt -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Milliwatt">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MineDrainage -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MineDrainage">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Leachate"/>
+        <rdfs:label xml:lang="en">Mine drainage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Minute -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Minute">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MinuteInverse -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MinuteInverse">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Mixed -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Mixed">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#WasteWaterSludge"/>
+        <rdfs:label xml:lang="en">Mixed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MixedLiquorSuspendedSolids -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MixedLiquorSuspendedSolids">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Solids"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MlPerGram -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MlPerGram">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MolecularAnalysis -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MolecularAnalysis">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/MonitoredParameter"/>
+        <rdfs:label xml:lang="en">Molecular analysis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Moles -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Moles">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#MovingBedBiologicalReactor -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#MovingBedBiologicalReactor">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#FluidizedBedReactor"/>
+        <rdfs:label xml:lang="en">Moving bed biological reactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#N2OEmissionFactor -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#N2OEmissionFactor">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">N2O Emission factor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#N2OEmissionRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#N2OEmissionRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">N2O Emission rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#N2OProductionRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#N2OProductionRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">N2O production rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NH4Removal -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NH4Removal">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Removal"/>
+        <rdfs:label xml:lang="en">NH4 Removal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NO2-Concentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NO2-Concentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Anions"/>
+        <rdfs:label xml:lang="en">NO2 Concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NO3-Concentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NO3-Concentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Anions"/>
+        <rdfs:label xml:lang="en">NO3 Concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NO3Removal -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NO3Removal">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Removal"/>
+        <rdfs:label xml:lang="en">NO3 removal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NOEmissionFactor -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NOEmissionFactor">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">NO Emission factor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NOEmissionRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NOEmissionRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">NO Emission rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NOProductionRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NOProductionRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">NO Production rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NOxProductionRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NOxProductionRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ProductionRates"/>
+        <rdfs:label xml:lang="en">NOx Production rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NOxRemoval -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NOxRemoval">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Removal"/>
+        <rdfs:label xml:lang="en">NOx removal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NOxUptakeRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NOxUptakeRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#UptakeRates"/>
+        <rdfs:label xml:lang="en">NOx uptake rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Nanodrop -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Nanodrop">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#NucleicAcidDosageMethod"/>
+        <rdfs:label xml:lang="en">Nanodrop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Nanogram -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Nanogram">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NanogramPerMicrolitre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NanogramPerMicrolitre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NeutralDetergentFiber -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NeutralDetergentFiber">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#VanSoestFractionationAndPolysaccharides"/>
+        <rdfs:label xml:lang="en">Neutral detergent fiber</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NeutralDetergentInsoluble -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NeutralDetergentInsoluble">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#VanSoestFractionationAndPolysaccharides"/>
+        <rdfs:label xml:lang="en">Neutral detergent insoluble</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NitrateProductionRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NitrateProductionRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ProductionRates"/>
+        <rdfs:label xml:lang="en">Nitrate production rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NitrateTreatment -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NitrateTreatment">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BiologicalAeratedFilter"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#MovingBedBiologicalReactor"/>
+        <rdfs:label xml:lang="en">Nitrate treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NitrateUptakeRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NitrateUptakeRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#UptakeRates"/>
+        <rdfs:label xml:lang="en">Nitrate uptake rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NitricOxideUptakeRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NitricOxideUptakeRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#UptakeRates"/>
+        <rdfs:label xml:lang="en">Nitric oxide uptake rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NitriteProductionRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NitriteProductionRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ProductionRates"/>
+        <rdfs:label xml:lang="en">Nitrite production rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NitriteUptakeRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NitriteUptakeRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#UptakeRates"/>
+        <rdfs:label xml:lang="en">Nitrite uptake rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NitrogenRemoval -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NitrogenRemoval">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Removal"/>
+        <rdfs:label xml:lang="en">Nitrogen removal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NitrousOxideUptakeRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NitrousOxideUptakeRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#UptakeRates"/>
+        <rdfs:label xml:lang="en">Nitrous oxide uptake rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Non-H2OrientedFermentation -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Non-H2OrientedFermentation">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AcidogenicFermentation"/>
+        <rdfs:label xml:lang="en">Non-H2 Oriented fermentation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NonFiberCHO -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NonFiberCHO">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#VanSoestFractionationAndPolysaccharides"/>
+        <rdfs:label xml:lang="en">Non fiber CHO</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NonIonicSurfactant -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NonIonicSurfactant">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis"/>
+        <rdfs:label xml:lang="en">Non ionic surfactant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NormoMl -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NormoMl">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NormoMlPerDay -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NormoMlPerDay">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NormoMlPerGC -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NormoMlPerGC">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NormoMlPerGCPerDay -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NormoMlPerGCPerDay">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NormoMlPerGCPerWeek -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NormoMlPerGCPerWeek">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NormoMlPerGDco -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NormoMlPerGDco">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NormoMlPerGDcoPerDay -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NormoMlPerGDcoPerDay">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NormoMlPerGDcoPerWeek -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NormoMlPerGDcoPerWeek">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NormoMlPerWeek -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NormoMlPerWeek">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NucleicAcidAmplifiction -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NucleicAcidAmplifiction">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Procedure"/>
+        <rdfs:label xml:lang="en">Nucleic acid amplification procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NucleicAcidDosageMethod -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NucleicAcidDosageMethod">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Method"/>
+        <rdfs:label xml:lang="en">Nucleic acid dosage method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NucleicAcidExtraction -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NucleicAcidExtraction">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Procedure"/>
+        <rdfs:label xml:lang="en">Nucleic acid extraction procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NucleicAcidExtractionMethod -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NucleicAcidExtractionMethod">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Method"/>
+        <rdfs:label xml:lang="en">Nucleic acid extraction method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Nucleotide -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Nucleotide">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#OperatingParameters -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#OperatingParameters">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/MonitoredParameter"/>
+        <rdfs:label xml:lang="en">Operating parameters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#OpticalDensity600nm -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#OpticalDensity600nm">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherMonitoredParameters"/>
+        <rdfs:label xml:lang="en">Optical density 600nm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#OrganicLoadingRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#OrganicLoadingRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BasicOperatingParameters"/>
+        <rdfs:label xml:lang="en">Organic loading rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis"/>
+        <rdfs:label xml:lang="en">Organic or volatile fatty acids</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Organism -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Organism">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#LaboratoryInputs"/>
+        <rdfs:label xml:lang="en">Organism</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis"/>
+        <rdfs:label xml:lang="en">Other chemical analysis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#OtherMonitoredParameters -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#OtherMonitoredParameters">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/MonitoredParameter"/>
+        <rdfs:label xml:lang="en">Other monitored parameters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#OtherSOP -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#OtherSOP">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Procedure"/>
+        <rdfs:label xml:lang="en">Other SOP</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#OtherSolidWaste -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#OtherSolidWaste">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/Input"/>
+        <rdfs:label xml:lang="en">Other solid waste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#OutletFlowRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#OutletFlowRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Flows"/>
+        <rdfs:label xml:lang="en">Outlet flow rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#OxygenDemand -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#OxygenDemand">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis"/>
+        <rdfs:label xml:lang="en">Oxygen demand</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#OxygenTransferCoefficient -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#OxygenTransferCoefficient">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherMonitoredParameters"/>
+        <rdfs:label xml:lang="en">Oxygen transfer coefficient</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#OxygenUptakeRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#OxygenUptakeRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#UptakeRates"/>
+        <rdfs:label xml:lang="en">Oxygen uptake rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PGM -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PGM">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Sequencer"/>
+        <rdfs:label xml:lang="en">PGM</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PO43-Concentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PO43-Concentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Anions"/>
+        <rdfs:label xml:lang="en">PO43 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ParticulateOrganicCarbon -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ParticulateOrganicCarbon">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElementalAnalysis"/>
+        <rdfs:label xml:lang="en">Particulate organic carbon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ParticulateOrganicNitrogen -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ParticulateOrganicNitrogen">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElementalAnalysis"/>
+        <rdfs:label xml:lang="en">Particulate organic nitrogen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Pascal -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Pascal">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Percent -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Percent">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherMonitoredParameters"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+        <rdfs:label xml:lang="en">Percent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PercentNEliminated -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PercentNEliminated">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PercentNh4Influent -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PercentNh4Influent">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PercentNh4Oxidized -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PercentNh4Oxidized">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PercentNo3Influent -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PercentNo3Influent">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PercentNo3Reduced -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PercentNo3Reduced">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PercentOttmp -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PercentOttmp">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PercentOttmppd -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PercentOttmppd">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PercentOttmppw -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PercentOttmppw">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PercentTnInfluent -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PercentTnInfluent">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Permil -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Permil">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Phenol -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Phenol">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Alcohols"/>
+        <rdfs:label xml:lang="en">Phenol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PhosphorusRemoval -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PhosphorusRemoval">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Removal"/>
+        <rdfs:label xml:lang="en">Phosphorus removal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Picomolar -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Picomolar">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Pig -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Pig">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Manure"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Slurry"/>
+        <rdfs:label xml:lang="en">Pig</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PlugFlowAnaerobicDigestor -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PlugFlowAnaerobicDigestor">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Dry"/>
+        <rdfs:label xml:lang="en">Plug flow anaerobic digestor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PolysaccharideConcentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PolysaccharideConcentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#VanSoestFractionationAndPolysaccharides"/>
+        <rdfs:label xml:lang="en">Polysaccharide concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PowerDensityPerSurface -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PowerDensityPerSurface">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalPerformances"/>
+        <rdfs:label xml:lang="en">Power density per surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#PowerDensityPerVolume -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#PowerDensityPerVolume">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalPerformances"/>
+        <rdfs:label xml:lang="en">Power density per volume</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Pre-OrPost-Treatment -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Pre-OrPost-Treatment">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/ProcessCategory"/>
+        <rdfs:label xml:lang="en">Pre- or Post- treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Primary -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Primary">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#WasteWaterSludge"/>
+        <rdfs:label xml:lang="en">Primary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Procedure -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Procedure">
+        <rdfs:label xml:lang="en">Procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ProcessPerformanceParameters -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ProcessPerformanceParameters">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/MonitoredParameter"/>
+        <rdfs:label xml:lang="en">Process performance parameters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ProductionRates -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ProductionRates">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OperatingParameters"/>
+        <rdfs:label xml:lang="en">Production rates</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Propan1Ol -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Propan1Ol">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Alcohols"/>
+        <rdfs:label xml:lang="en">Propan-1-Ol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Propan2Ol -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Propan2Ol">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Alcohols"/>
+        <rdfs:label xml:lang="en">Propan-2-Ol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Propionate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Propionate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids"/>
+        <rdfs:label xml:lang="en">Propionate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ProtonExchange -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ProtonExchange">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Membrane"/>
+        <rdfs:label xml:lang="en">Proton exchange</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Pyruvate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Pyruvate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids"/>
+        <rdfs:label xml:lang="en">Pyruvate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Qubit -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Qubit">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#NucleicAcidDosageMethod"/>
+        <rdfs:label xml:lang="en">Qubit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#QubitBRRNA -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#QubitBRRNA">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#NucleicAcidDosageMethod"/>
+        <rdfs:label xml:lang="en">Qubit BR RNA</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#QubitBRdsDNA -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#QubitBRdsDNA">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#NucleicAcidDosageMethod"/>
+        <rdfs:label xml:lang="en">Qubit BR dsDNA</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#QubitHSRNA -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#QubitHSRNA">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#NucleicAcidDosageMethod"/>
+        <rdfs:label xml:lang="en">Qubit HS RNA</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#QubitHSdsDNA -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#QubitHSdsDNA">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#NucleicAcidDosageMethod"/>
+        <rdfs:label xml:lang="en">Qubit HS dsDNA</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RawCompositionCH4 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RawCompositionCH4">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Raw composition CH4</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RawCompositionCO2 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RawCompositionCO2">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Raw composition CO2</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RawCompositionH2 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RawCompositionH2">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Raw composition H2</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RawCompositionH2s -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RawCompositionH2s">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Raw composition H2s</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RawCompositionN2 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RawCompositionN2">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Raw composition N2</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RawCompositionN2O -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RawCompositionN2O">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Raw composition N2O</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RawCompositionNh3 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RawCompositionNh3">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Raw composition Nh3</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RawCompositionNo -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RawCompositionNo">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Raw composition No</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RawCompositionO2 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RawCompositionO2">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Raw composition O2</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ReactorShape -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ReactorShape">
+        <rdfs:label xml:lang="en">Reactor shape</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Real -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Real">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ResidualHouseholdWasteOrMunicipalSolidWaste"/>
+        <rdfs:label xml:lang="en">Real</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RecirculationFlowRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RecirculationFlowRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Flows"/>
+        <rdfs:label xml:lang="en">Recirculation flow rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Reconstitued -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Reconstitued">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ResidualHouseholdWasteOrMunicipalSolidWaste"/>
+        <rdfs:label xml:lang="en">Reconstitued</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ReconstitutedBiowaste -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ReconstitutedBiowaste">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Biowaste"/>
+        <rdfs:label xml:lang="en">Reconstituted biowaste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Rectangular -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Rectangular">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ReactorShape"/>
+        <rdfs:label xml:lang="en">Rectangular</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Redox -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Redox">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis"/>
+        <rdfs:label xml:lang="en">Redox</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ReferenceElectrodeParameters -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ReferenceElectrodeParameters">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BioelectrochemicalSystems"/>
+        <rdfs:label xml:lang="en">Reference electrode parameters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ReferenceElectrodePotential -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ReferenceElectrodePotential">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ReferenceElectrodeParameters"/>
+        <rdfs:label xml:lang="en">Reference electrode potential</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ReferenceElectrodeProjectedSurface -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ReferenceElectrodeProjectedSurface">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ReferenceElectrodeParameters"/>
+        <rdfs:label xml:lang="en">Reference electrode projected surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ReferenceElectrodeRealSurface -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ReferenceElectrodeRealSurface">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ReferenceElectrodeParameters"/>
+        <rdfs:label xml:lang="en">Reference electrode real surface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Removal -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Removal">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ProcessPerformanceParameters"/>
+        <rdfs:label xml:lang="en">Removal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ResidualHouseholdWasteOrMunicipalSolidWaste -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ResidualHouseholdWasteOrMunicipalSolidWaste">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherSolidWaste"/>
+        <rdfs:label xml:lang="en">Residual household waste or municipal solid waste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Resistance -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Resistance">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Inter-ElectrodeParameters"/>
+        <rdfs:label xml:lang="en">Resistance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Restaurant -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Restaurant">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GreaseTank"/>
+        <rdfs:label xml:lang="en">Restaurant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RetentionTime -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RetentionTime">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BasicOperatingParameters"/>
+        <rdfs:label xml:lang="en">Retention time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RotatingBiologicalContacter -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RotatingBiologicalContacter">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#FixedBedReactor"/>
+        <rdfs:label xml:lang="en">Rotating biological contacter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Rpm -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Rpm">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SO42-Concentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SO42-Concentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Anions"/>
+        <rdfs:label xml:lang="en">SO42 concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Salinity -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Salinity">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis"/>
+        <rdfs:label xml:lang="en">Salinity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Second -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Second">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SecondInverse -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SecondInverse">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Secundary -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Secundary">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#WasteWaterSludge"/>
+        <rdfs:label xml:lang="en">Secundary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Separator -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Separator">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Membrane"/>
+        <rdfs:label xml:lang="en">Separator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SepticFarm -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SepticFarm">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#WasteWaterSludge"/>
+        <rdfs:label xml:lang="en">Septic farm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Sequencer -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Sequencer">
+        <rdfs:label xml:lang="en">Sequencer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Sequencing -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Sequencing">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Procedure"/>
+        <rdfs:label xml:lang="en">Sequencing procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SequencingBatchReactor -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SequencingBatchReactor">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Aerobic"/>
+        <rdfs:label xml:lang="en">Sequencing batch reactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SlaughterhouseWaste -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SlaughterhouseWaste">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherSolidWaste"/>
+        <rdfs:label xml:lang="en">Slaughterhouse waste</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SlowSandFiltration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SlowSandFiltration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Aerobic"/>
+        <rdfs:label xml:lang="en">Slow sand filtration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SludgeVolumeIndex -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SludgeVolumeIndex">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BasicOperatingParameters"/>
+        <rdfs:label xml:lang="en">Sludge volume index</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Slurry -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Slurry">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ManureSlurryUrine"/>
+        <rdfs:label xml:lang="en">Slurry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Solids -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Solids">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis"/>
+        <rdfs:label xml:lang="en">Solids</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SolidsRetentionTime -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SolidsRetentionTime">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BasicOperatingParameters"/>
+        <rdfs:label xml:lang="en">Solids retention time</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SolubleChemicalOxygenDemand -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SolubleChemicalOxygenDemand">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OxygenDemand"/>
+        <rdfs:label xml:lang="en">Soluble chemical oxygen demand</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SolubleKjeldahlNitrogen -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SolubleKjeldahlNitrogen">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis"/>
+        <rdfs:label xml:lang="en">Soluble kjeldahl nitrogen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SolubleOrganicNitrogen -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SolubleOrganicNitrogen">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElementalAnalysis"/>
+        <rdfs:label xml:lang="en">Soluble organic nitrogen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Speed -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Speed">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherMonitoredParameters"/>
+        <rdfs:label xml:lang="en">Speed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SquareCentimetre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SquareCentimetre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SquareMetre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SquareMetre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Substrate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Substrate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Usage"/>
+        <rdfs:label xml:lang="en">Substrate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Succinate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Succinate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids"/>
+        <rdfs:label xml:lang="en">Succinate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Sugars -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Sugars">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis"/>
+        <rdfs:label xml:lang="en">Sugars</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SurfaceRunoffWaters -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SurfaceRunoffWaters">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#WasteWater"/>
+        <rdfs:label xml:lang="en">Surface runoff waters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SyntheticBufferOrMedium -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SyntheticBufferOrMedium">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#LaboratoryInputs"/>
+        <rdfs:label xml:lang="en">Synthetic buffer or medium</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#SyntheticWastewater -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#SyntheticWastewater">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#WasteWater"/>
+        <rdfs:label xml:lang="en">Synthetic wastewater</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TKNRemoval -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TKNRemoval">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Removal"/>
+        <rdfs:label xml:lang="en">TKN removal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Temperature -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Temperature">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#BasicOperatingParameters"/>
+        <rdfs:label xml:lang="en">Temperature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TerritorialAD -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TerritorialAD">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Digestate"/>
+        <rdfs:label xml:lang="en">Territorial AD</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalAlkalinity -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalAlkalinity">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis"/>
+        <rdfs:label xml:lang="en">Total alkalinity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalCarbon -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalCarbon">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElementalAnalysis"/>
+        <rdfs:label xml:lang="en">Total carbon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalHeatEvolved -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalHeatEvolved">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#CalorimetricPerformances"/>
+        <rdfs:label xml:lang="en">Total heat evolved</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalInorganicCarbon -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalInorganicCarbon">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElementalAnalysis"/>
+        <rdfs:label xml:lang="en">Total inorganic carbon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalKjeldahlNitrogen -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalKjeldahlNitrogen">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis"/>
+        <rdfs:label xml:lang="en">Total Kjeldahl Nitrogen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalNitrogen -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalNitrogen">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElementalAnalysis"/>
+        <rdfs:label xml:lang="en">Total Nitrogen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalOrganicCarbon -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalOrganicCarbon">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElementalAnalysis"/>
+        <rdfs:label xml:lang="en">Total organic carbon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalOrganicNitrogen -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalOrganicNitrogen">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElementalAnalysis"/>
+        <rdfs:label xml:lang="en">Total organic nitrogen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalPhosphorus -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalPhosphorus">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElementalAnalysis"/>
+        <rdfs:label xml:lang="en">Total phosphorus</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalPressure -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalPressure">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Total pressure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalSolids -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalSolids">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Solids"/>
+        <rdfs:label xml:lang="en">Total solids</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalSuspendedSolids -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalSuspendedSolids">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Solids"/>
+        <rdfs:label xml:lang="en">Total suspended solids</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TotalSuspendedSolidsRemoval -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TotalSuspendedSolidsRemoval">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Removal"/>
+        <rdfs:label xml:lang="en">Total suspended solids removal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Treatment -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Treatment">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/ProcessCategory"/>
+        <rdfs:label xml:lang="en">Treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#TricklingFilter -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#TricklingFilter">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#FixedBedReactor"/>
+        <rdfs:label xml:lang="en">Trickling filter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#UASB -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#UASB">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Wet"/>
+        <rdfs:label xml:lang="en">UASB</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#UltimateBiochemicalOxygenDemand -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#UltimateBiochemicalOxygenDemand">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OxygenDemand"/>
+        <rdfs:label xml:lang="en">Ultimate biochemical oxygen demand</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Unit -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Unit">
+        <rdfs:label xml:lang="en">Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Unitless -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Unitless">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#UptakeRates -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#UptakeRates">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OperatingParameters"/>
+        <rdfs:label xml:lang="en">Uptake rates</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Urban -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Urban">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Mixed"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Primary"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Secundary"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#WasteWater"/>
+        <rdfs:label xml:lang="en">Urban</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Urine -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Urine">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ManureSlurryUrine"/>
+        <rdfs:label xml:lang="en">Urine</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Usage -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Usage">
+        <rdfs:label xml:lang="en">Usage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#UsedCookingOilOrFat -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#UsedCookingOilOrFat">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GreaseWaste"/>
+        <rdfs:label xml:lang="en">Used cooking oil or fat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#VVsAgAgcl -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#VVsAgAgcl">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#VVsSce -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#VVsSce">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#VVsShe -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#VVsShe">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Valerate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Valerate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OrganicOrVolatileFattyAcids"/>
+        <rdfs:label xml:lang="en">Valerate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#VanSoestFractionationAndPolysaccharides -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#VanSoestFractionationAndPolysaccharides">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ChemicalAndPhysicalAnalysis"/>
+        <rdfs:label xml:lang="en">VanSoest fractionation and polysaccharides</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#VolatileMatterContent -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#VolatileMatterContent">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis"/>
+        <rdfs:label xml:lang="en">Volatile matter content</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#VolatileSolids -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#VolatileSolids">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Solids"/>
+        <rdfs:label xml:lang="en">Volatile solids</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#VolatileSuspendedSolids -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#VolatileSuspendedSolids">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Solids"/>
+        <rdfs:label xml:lang="en">Volatile suspended solids</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Volt -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Volt">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Volume -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Volume">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Volumes"/>
+        <rdfs:label xml:lang="en">Volume</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Volumes -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Volumes">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/MonitoredParameter"/>
+        <rdfs:label xml:lang="en">Volumes</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#WastageFlowRate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#WastageFlowRate">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Flows"/>
+        <rdfs:label xml:lang="en">Wastage flow rate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#WasteWater -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#WasteWater">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/Input"/>
+        <rdfs:label xml:lang="en">Wastewater</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#WasteWaterSludge -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#WasteWaterSludge">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#DigestateOrWasteWaterSludge"/>
+        <rdfs:label xml:lang="en">Wastewater sludge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#WasteWaterTreatment -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#WasteWaterTreatment">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GreaseTank"/>
+        <rdfs:label xml:lang="en">Wastewater treatment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Watt -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Watt">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Wattpercubicmetre -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Wattpercubicmetre">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Week -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Week">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Wet -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Wet">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#DarkFermentation"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Digestion"/>
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Non-H2OrientedFermentation"/>
+        <rdfs:label xml:lang="en">Wet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#WorkingVolume -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#WorkingVolume">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Volumes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#bioinformaticWorkflowProcedure -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#bioinformaticWorkflowProcedure">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Procedure"/>
+        <rdfs:label xml:lang="en">Bioinformatic workflow procedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#d13C -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#d13C">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#IsotopicAnalysis"/>
+        <rdfs:label xml:lang="en">d13C</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#d15N -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#d15N">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#IsotopicAnalysis"/>
+        <rdfs:label xml:lang="en">d15N</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#pH -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#pH">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#OtherChemicalAnalysis"/>
+        <rdfs:label xml:lang="en">pH</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#1_3Propanediol -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#1_3Propanediol">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Alcohols"/>
+        <rdfs:label xml:lang="en">1,3 Propanediol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#454GS -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#454GS">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Sequencer"/>
+        <rdfs:label xml:lang="en">454 GS</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#454GSFLX+ -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#454GSFLX+">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Sequencer"/>
+        <rdfs:label xml:lang="en">454 GS FLX+</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#AnodeSurface/VolumeRatio -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#AnodeSurface/VolumeRatio">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#AnodeParameters"/>
+        <rdfs:label xml:lang="en">Anode surface/Volume ratio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Ca2+Concentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Ca2+Concentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Cations"/>
+        <rdfs:label xml:lang="en">Ca2+ Concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#CathodeSurface/VolumeRatio -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#CathodeSurface/VolumeRatio">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#CathodeParameters"/>
+        <rdfs:label xml:lang="en">Volume ratio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ElectrodeSurface/VolumeRatio -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ElectrodeSurface/VolumeRatio">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ElectrodeParameters"/>
+        <rdfs:label xml:lang="en">Volume ratio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#K+Concentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#K+Concentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Cations"/>
+        <rdfs:label xml:lang="en">K+ Concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Li+Cation -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Li+Cation">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Cations"/>
+        <rdfs:label xml:lang="en">Li+ Cation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Mg2+Concentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Mg2+Concentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Cations"/>
+        <rdfs:label xml:lang="en">Mg2+ Concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#NH4+Concentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#NH4+Concentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Cations"/>
+        <rdfs:label xml:lang="en">NH4+ Concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#Na+Concentration -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#Na+Concentration">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#Cations"/>
+        <rdfs:label xml:lang="en">Na+ Concentration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#RatioCH4/CH4CO2 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#RatioCH4/CH4CO2">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#GasAnalysis"/>
+        <rdfs:label xml:lang="en">Ratio CH4% / (CH4% + CO2%)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#ReferenceElectrodeSurface/VolumeRatio -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#ReferenceElectrodeSurface/VolumeRatio">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#ReferenceElectrodeParameters"/>
+        <rdfs:label xml:lang="en">Reference electrode surface/Volume ratio</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#d13CH4/12CH4 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#d13CH4/12CH4">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#IsotopicAnalysis"/>
+        <rdfs:label xml:lang="en">d13CH4/12CH4</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#d13CO2/12CO2 -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#d13CO2/12CO2">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#IsotopicAnalysis"/>
+        <rdfs:label xml:lang="en">d13CO2/12CO2</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics#qPCR/RT-qPCR -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics#qPCR/RT-qPCR">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics#MolecularAnalysis"/>
+        <rdfs:label xml:lang="en">qPCR/RT-qPCR</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/BioinformaticWorkflow -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/BioinformaticWorkflow">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasProcedure"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics#bioinformaticWorkflowProcedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="fr">L&apos;ensemble des outils bioinformatique, leur enchainement et leurs paramètres, utilisé pour traiter les données de séquencage ADN brutes</rdfs:comment>
+        <rdfs:comment xml:lang="en">The set of bioinformatics tools, their sequence and parameters, used to process the raw DNA sequencing data.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bioinformatic workflow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/BiosampleSequencingProcessedData -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/BiosampleSequencingProcessedData">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a</rdfs:comment>
+        <rdfs:label xml:lang="en">BiosampleSequencingProcessedData</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/BiosampleSequencingRawData -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/BiosampleSequencingRawData">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a</rdfs:comment>
+        <rdfs:label xml:lang="en">BiosampleSequencingRawData</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/Process -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/Process">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasProcessCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics/ProcessCategory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">It corresponds to the process and reactor from which the samples from the field originate. Indeed, a single industrial site can gather several processes (e.g. activated sludge, anaerobic digester) and the reactor from which the sample originates needs to be specified.</rdfs:comment>
+        <rdfs:label xml:lang="en">Biotechnological process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/Compartment -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/Compartment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#isPartOf"/>
+                <owl:allValuesFrom rdf:resource="http://opendata.inrae.fr/deepomics/Reactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A physical compartment of a laboratory reactor. Typically, bioelectrochemical system reactors can have several compartments, such as the anodic compartment and the cathodic compartment.</rdfs:comment>
+        <rdfs:label xml:lang="en">Compartment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/ExperimentalSeries -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/ExperimentalSeries">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasOperator"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasProcessCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics/ProcessCategory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasReferent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">They represent a consistent batch of experiments led into reactors or pilots, within a project. They are structured into operating conditions and replicates.</rdfs:comment>
+        <rdfs:label xml:lang="en">Experimental series</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/Input -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/Input">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/Sample"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasUsage"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics#Usage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The inputs are the compounds and elements which will be used in the reactors (feeding, gas, inocula, buffers, matrix, pure microbial strain, …). They are described according to a controlled vocabulary and they are defined at the scale of the project.</rdfs:comment>
+        <rdfs:label xml:lang="en">Input</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/MetabarcodingBioinformaticRun -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/MetabarcodingBioinformaticRun">
+        <rdfs:comment xml:lang="en">It represents a sequencing run, in this precise case for amplicon sequencing. It is thus described with its main characteristics (such as the sequencing apparatus) and it gathers all the biosamples from the considered project sequenced during the same run.</rdfs:comment>
+        <rdfs:label xml:lang="en">MetabarcodingRun</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/MonitoredParameter -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/MonitoredParameter">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasUnit"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics#Unit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A quantitative parameter monitored either in a compartment of a laboratory reactor, or in an industrial process (e.g. pH, cumulated biogas production, qPCR analysis of total bacteria, ...).</rdfs:comment>
+        <rdfs:label xml:lang="en">Monitored parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/MonitoredParametersValues -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/MonitoredParametersValues">
+        <rdfs:label>MonitoredParametersValues</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/PcrConditions -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/PcrConditions">
+        <rdfs:label xml:lang="en">PCRconditions</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/ProcessCategory -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/ProcessCategory">
+        <rdfs:label xml:lang="en">Process category</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://opendata.inrae.fr/deepomics/TemporalEntity -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/TemporalEntity">
+        <rdfs:label xml:lang="en">Temporal Entity</rdfs:label>
+    </owl:Class>
+
+    <!-- http://opendata.inrae.fr/deepomics/Project -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/Project">
+        <rdfs:subClassOf rdf:resource="http://opendata.inrae.fr/deepomics/TemporalEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics/hasObserver"/>
+                <owl:someValuesFrom rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics/hasParticipant"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasContact"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics/hasCoordinator"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#status"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics/ontology#startDate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics/ontology#endDate"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Project</rdfs:label>
+        <skos:closeMatch>http://www.opensilex.org/vocabulary/oeso#Project</skos:closeMatch>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/Reactor -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/Reactor">
+        <rdfs:label xml:lang="en">Reactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/Replicate -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/Replicate">
+        <rdfs:comment xml:lang="en">Reactors which were subjected to the exact same treatment; they are grouped by operating conditions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Replicate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/Sample -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/Sample">
+        <rdfs:comment xml:lang="en">It represents a physical sample for which you plan to perform a specific meta-omics analysis.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sample</rdfs:label>
+        <skos:example xml:lang="en">It is advised to create them in DeepOmics before the acquisition of the corresponding meta-omics data. If two different meta-omics analyses will be performed on a same physical samples, two distinct biosamples need to be created.</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/Campaign -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/Campaign">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasOperator"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasSite"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics/Site"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasReferent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics/ontology#startDate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Sampling campaign</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/Site -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/Site">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasBiotechnologicalProcess"/>
+                <owl:someValuesFrom rdf:resource="http://opendata.inrae.fr/deepomics/Process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">It corresponds to the industrial site from which the samples originate (e.g: a wastewater treatment plant).</rdfs:comment>
+        <rdfs:label xml:lang="en">Sampling site</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/SequencingRun -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/SequencingRun">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasProcedure"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics#Sequencing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasReferent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://xmlns.com/foaf/01/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasSequencer"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics#Sequencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Sequencing run</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/SequencingSample -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/SequencingSample">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasProcedure"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics#Library"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasProcedure"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics#NucleicAcidAmplifiction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#hasProcedure"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics#NucleicAcidExtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#isPartOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics/Sample"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://opendata.inrae.fr/deepomics#isPartOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://opendata.inrae.fr/deepomics/SequencingRun"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Sequencing sample</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://opendata.inrae.fr/deepomics/Annotation -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/Annotation">
+        <rdfs:label>Annotation</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://opendata.inrae.fr/deepomics/Taxonomy -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/Taxonomy">
+        <rdfs:label>Taxonomy</rdfs:label>
+    </owl:Class>
+
+    <!-- http://opendata.inrae.fr/deepomics/TaxonCount -->
+
+    <owl:Class rdf:about="http://opendata.inrae.fr/deepomics/TaxonCount">
+        <rdfs:label>TaxonCount</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/01/Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/01/Agent">
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+    </owl:Class>
+    <rdf:Description>
+        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://opendata.inrae.fr/deepomics#WorkingVolume">
+        <rdfs:label xml:lang="en">Working volume</rdfs:label>
+        <rdfs:label xml:lang="en">Working volume (L)</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,16 @@
+name: 'owl-to-jsonld-synfony-configuration'
+description: 'Generate jsonld context from one (or many) ontologie(s) file, to use as a configuration .yaml of a synfony (apiplatform)'
+inputs:
+  ontology_path_input:
+    description: 'Path to an ontology file or folder'
+    required: true
+  yaml_path_output:
+    description: 'Path to the destination of the generated yaml configuration file'
+    required: true
+  
+# outputs:
+#   time: # id of output
+#     description: 'The time we greeted you'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
