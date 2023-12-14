@@ -19,7 +19,7 @@ build_job:
     reports:
       dotenv: job.env
 
-create:release:
+release_job:
   stage: release
   image: registry.gitlab.com/gitlab-org/release-cli:latest
   dependencies:
@@ -38,3 +38,8 @@ create:release:
       links:
         - name: "ontology-to-synfony-vocabulary.exe"
           url: "https://https://gitlab.irstea.fr/pole-is/ontology-to-synfony-vocabulary/-/jobs/$JOB_ID/artifacts/download"
+  only:
+    - tags
+  rules:
+    - if: $CI_COMMIT_TAG                  # Run this job when a tag is created manually
+
